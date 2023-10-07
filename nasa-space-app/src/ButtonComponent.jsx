@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const GeoComponent = () => {
+const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
     const [error, setError] = useState(null);
 
@@ -40,4 +40,4 @@ const GeoComponent = () => {
     );
 };
 
-export default GeoComponent;
+export default ButtonComponent;
