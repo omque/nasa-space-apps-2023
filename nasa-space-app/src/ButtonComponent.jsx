@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const GeoComponent = () => {
     const [locationData, setLocationData] = useState(null);
@@ -6,7 +7,7 @@ const GeoComponent = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://api.ipgeolocation.io/ipgeo?apiKey=6e9d6acd2927431687c411e8c19e03ba&fields=latitude,longitude');
+            const response = await fetch('http://ip-api.com/json/');
 
             if (!response.ok) {
                 throw new Error('Network response was not ok' + response.statusText);
@@ -21,12 +22,12 @@ const GeoComponent = () => {
 
     return (
         <div>
-            <button onClick={fetchData}>Get Location</button>
+            <button onClick={fetchData} className='button'>Get Location</button>
             {locationData && (
                 <div>
                     <h2>Location Data</h2>
-                    <p>Latitude: {locationData.latitude}</p>
-                    <p>Longitude: {locationData.longitude}</p>
+                    <p>Latitude: {locationData.lat}</p>
+                    <p>Longitude: {locationData.lon}</p>
                 </div>
             )}
             {error && (
