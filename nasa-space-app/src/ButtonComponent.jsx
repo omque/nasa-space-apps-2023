@@ -4,6 +4,7 @@ import './App.css';
 const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
     const [error, setError] = useState(null);
+    const [fireRisk, setFireRisk] = useState(null)
 
     const fetchData = async () => {
         try {
