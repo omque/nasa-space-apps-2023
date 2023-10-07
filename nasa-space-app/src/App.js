@@ -15,8 +15,9 @@ function App() {
         </p>
       </div>
 
-
+      <div className='safety-info'>
       <InfoComponent />
+      </div>
     </div>
   );
 }
