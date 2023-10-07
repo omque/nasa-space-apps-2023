@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(255, 151, 146);
 }
 
 
@@ -15,12 +16,17 @@
 }
 
 .jumbotron {
+  color: white;
+  text-shadow: 2px 1px #000000;
   height: 100vh;
   border: solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   justify-content: center;
+  background-image: url('./DryForestPhoto.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .jumbotron-item {
