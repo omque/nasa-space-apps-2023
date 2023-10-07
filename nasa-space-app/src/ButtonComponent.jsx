@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Button } from 'bootstrap';
 import LocalDataComponent from './LocalDataComponent';
 
 const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
     const [error, setError] = useState(null);
-    const [fireRisk, setFireRisk] = useState(null)
+    const [showButton, setShowButton] = useState(true);
+    const [fireRisk, setFireRisk] = useState(null);  // Note: 'fireRisk' state is not used in the provided code
+
+    const resetStates = () => {
+        setLocationData(null);
+        setError(null);
+        setShowButton(true);
+        setFireRisk(null);  // Resetting the 'fireRisk' state, though it's not used in the provided code
+    };
 
     const fetchData = async () => {
         try {
             const response = await fetch('http://ip-api.com/json/');
-
             if (!response.ok) {
                 throw new Error('Network response was not ok' + response.statusText);
             }
-
             const data = await response.json();
             setLocationData(data);
+            setShowButton(false);
         } catch (error) {
             setError(error.toString());
         }
@@ -25,7 +31,15 @@ const ButtonComponent = () => {
 
     return (
         <div>
-            <button class="btn btn-primary" onClick={fetchData}  >Get Location</button>
+            {showButton ? (
+                <button className="btn btn-primary" onClick={fetchData}>
+                    Get Location
+                </button>
+            ) : (
+                <button className="btn btn-secondary" onClick={resetStates}>
+                    Reset
+                </button>
+            )}
             {locationData && (
                 <div>
                     <h2>Location Data</h2>
