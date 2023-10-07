@@ -8,10 +8,18 @@
   border-width: 50%;
 }
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+
+#li {
+  align-items: flex-start;
+  text-align: left;
 }
 
 .App-header {
@@ -24,6 +32,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
 
 .App-link {
   color: #61dafb;
