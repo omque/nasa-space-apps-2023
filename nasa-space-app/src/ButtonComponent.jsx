@@ -24,8 +24,7 @@ const ButtonComponent = () => {
 
     return (
         <div>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button onClick={fetchData} className='button'>Get Location</button>
+            <button class="btn btn-primary" onClick={fetchData} >Get Location</button>
             {locationData && (
                 <div>
                     <h2>Location Data</h2>
