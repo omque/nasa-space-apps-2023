@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button } from 'bootstrap';
 
 const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
@@ -23,6 +24,7 @@ const ButtonComponent = () => {
 
     return (
         <div>
+            <button type="button" class="btn btn-primary">Primary</button>
             <button onClick={fetchData} className='button'>Get Location</button>
             {locationData && (
                 <div>

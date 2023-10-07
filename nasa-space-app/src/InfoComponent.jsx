@@ -9,9 +9,9 @@ const InfoComponent = () => {
         <div className="info-list">
             <h2>Understanding Vegetation’s Role in Wildfire</h2>
             <ul>
-                <li><strong>Fuel for Fires:</strong> Dry, dense, or dead vegetation can easily ignite and provide fuel for wildfires.</li>
-                <li><strong>Spread of Fires:</strong> Vegetation can facilitate the spread of wildfires, enabling them to reach buildings and other structures.</li>
-                <li><strong>Intensity of Fires:</strong> Thick vegetation can intensify fires, making them harder to control and extinguish.</li>
+                <li class="list-group-item"><strong>Fuel for Fires:</strong> Dry, dense, or dead vegetation can easily ignite and provide fuel for wildfires.</li>
+                <li class="list-group-item"><strong>Spread of Fires:</strong> Vegetation can facilitate the spread of wildfires, enabling them to reach buildings and other structures.</li>
+                <li class="list-group-item"><strong>Intensity of Fires:</strong> Thick vegetation can intensify fires, making them harder to control and extinguish.</li>
             </ul>
 
             <h2>Preventative Measures: Managing Local Vegetation</h2>
