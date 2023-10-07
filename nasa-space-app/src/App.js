@@ -13,7 +13,6 @@ function App() {
         <p class="jumbotron-item">
           <ButtonComponent  class="btn btn-primary btn-lg"/>
         </p>
-        <LocalDataComponent />
       </div>
 
 

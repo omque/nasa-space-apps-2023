@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Button } from 'bootstrap';
+import LocalDataComponent from './LocalDataComponent';
 
 const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
@@ -24,12 +25,13 @@ const ButtonComponent = () => {
 
     return (
         <div>
-            <button class="btn btn-primary" onClick={fetchData} >Get Location</button>
+            <button class="btn btn-primary" onClick={fetchData}  >Get Location</button>
             {locationData && (
                 <div>
                     <h2>Location Data</h2>
                     <p>Latitude: {locationData.lat}</p>
                     <p>Longitude: {locationData.lon}</p>
+                    <LocalDataComponent />
                 </div>
             )}
             {error && (
