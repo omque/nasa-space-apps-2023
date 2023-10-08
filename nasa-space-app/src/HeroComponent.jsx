@@ -16,14 +16,6 @@ const HeroComponent = () => {
 
     return (
         <div>
-            <ButtonComponent
-                setLocationData={setLocationData}
-                setShowButton={setShowButton}
-                setError={setError}
-                showButton={showButton}
-                resetStates={resetStates}
-                className="btn btn-primary btn-lg"
-            />
             {locationData && (
                 <div>
                     <h2>Location Data</h2>
@@ -38,6 +30,21 @@ const HeroComponent = () => {
                     <p>{error}</p>
                 </div>
             )}
+
+            <div className='background box'>
+                <p>Using open science information from satellites, we can 
+                    see what kind of vegitation is near you and what risks come
+                    with it.
+                </p>
+                <ButtonComponent
+                    setLocationData={setLocationData}
+                    setShowButton={setShowButton}
+                    setError={setError}
+                    showButton={showButton}
+                    resetStates={resetStates}
+                    className="btn btn-primary btn-lg"
+                />
+            </div>
         </div>
     );
 };

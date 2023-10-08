@@ -17,7 +17,7 @@
 
 .jumbotron {
   color: white;
-  text-shadow: 2px 1px #000000;
+  text-shadow: #282c34;
   height: 100vh;
   border: solid;
   display: flex;
@@ -37,8 +37,23 @@
   padding: 2%;
 }
 
-.safety-info {
-  text-align: left;
+#main-title-line{
+  border-bottom: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  outline: 1px solid black;
+}
+
+.main-title {
+  border-bottom: solid;
+  color: black;
+}
+
+.background-box {
+  background-color: white;
 }
 
 .App-link {
