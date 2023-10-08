@@ -1,20 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
-import LocalDataComponent from './LocalDataComponent';
 
-const ButtonComponent = () => {
-    const [locationData, setLocationData] = useState(null);
-    const [error, setError] = useState(null);
-    const [showButton, setShowButton] = useState(true);
-    const [fireRisk, setFireRisk] = useState(null);  // Note: 'fireRisk' state is not used in the provided code
-
-    const resetStates = () => {
-        setLocationData(null);
-        setError(null);
-        setShowButton(true);
-        setFireRisk(null);  // Resetting the 'fireRisk' state, though it's not used in the provided code
-    };
-
+const ButtonComponent = ({ setLocationData, setShowButton, setError, showButton, resetStates  }) => {
     const fetchData = async () => {
         try {
             const response = await fetch('http://ip-api.com/json/');
@@ -39,20 +25,6 @@ const ButtonComponent = () => {
                 <button className="btn btn-secondary" onClick={resetStates}>
                     Reset
                 </button>
-            )}
-            {locationData && (
-                <div>
-                    <h2>Location Data</h2>
-                    <p>Latitude: {locationData.lat}</p>
-                    <p>Longitude: {locationData.lon}</p>
-                    <LocalDataComponent />
-                </div>
-            )}
-            {error && (
-                <div>
-                    <h2>Error</h2>
-                    <p>{error}</p>
-                </div>
             )}
         </div>
     );
