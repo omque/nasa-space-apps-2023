@@ -4,45 +4,75 @@ const LocalDataComponent = () => {
   // Dummy Data
   const [localData, setLocalData] = useState({
     vegetationType: "Dense Forest",
-    fireRisk: "Medium",
+    fireRisk: -1,
   });
 
   // Actionable steps based on fire risk
   const getActionableSteps = (riskLevel) => {
-    switch (riskLevel) {
-      case "High":
-        return (
-          <ul>
-            <li>Evacuate the area as soon as possible.</li>
-            <li>Ensure your emergency kit is packed and ready.</li>
-            <li>Use N95 masks to protect against inhaling smoke.</li>
-          </ul>
-        );
-      case "Medium":
-        return (
-          <ul>
-            <li>Stay alert for potential evacuation notices.</li>
-            <li>Keep emergency supplies prepared.</li>
-            <li>Limit outdoor activities to prevent smoke inhalation.</li>
-          </ul>
-        );
-      case "Low":
-        return (
-          <ul>
-            <li>Stay informed with the latest local news.</li>
-            <li>Ensure you have an emergency plan in place.</li>
-            <li>Continue regular property and vegetation maintenance.</li>
-          </ul>
-        );
-      default:
-        return <p>Stay informed and prepared.</p>;
+    if (riskLevel < 0) {
+      return (
+        <ul>
+          <li>Evacuate the area as soon as possible.</li>
+          <li>Ensure your emergency kit is packed and ready.</li>
+          <li>Use N95 masks to protect against inhaling smoke.</li>
+        </ul>
+      );
+    } else if (riskLevel >= 0 && riskLevel <= 0.34) { // Inclusive boundaries
+      return (
+        <ul>
+          <li>Stay alert for potential evacuation notices.</li>
+          <li>Keep emergency supplies prepared.</li>
+          <li>Limit outdoor activities to prevent smoke inhalation.</li>
+        </ul>
+      );
+    } else if (riskLevel > 0.34 && riskLevel <= 0.66) { // Adjusted boundary
+      return (
+        <ul>
+          <li>Stay informed with the latest local news.</li>
+          <li>Ensure you have an emergency plan in place.</li>
+          <li>Continue regular property and vegetation maintenance.</li>
+        </ul>
+      );
+    } else if (riskLevel > 0.66) {
+      return (
+        <ul>
+          <li>Stay informed with the latest local news.</li>
+          <li>Ensure you have an emergency plan in place.</li>
+          <li>Continue regular property and vegetation maintenance.</li>
+        </ul>
+      );
+    } else {
+      return <p>Stay informed and prepared.</p>;
     }
   };
+  
 
-  useEffect(() => {
-    // When integrated with API or database,
-    // fetch real data here and update localData using setLocalData.
-  }, []);
+  //Function for getting fire risk data
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch("YOUR_API_ENDPOINT");
+      
+  //     if (!response.ok) {
+  //       throw new Error("Server responded with a non-ok status");
+  //     }
+      
+  //     const data = await response.json();
+  
+  //     // Ensure fireRisk is between -1 and 1
+  //     if (
+  //       typeof data.fireRisk !== 'number' ||
+  //       data.fireRisk < -1 ||
+  //       data.fireRisk > 1
+  //     ) {
+  //       throw new Error("Invalid fireRisk value received");
+  //     }
+      
+  //     setLocalData(data);
+  //   } catch (error) {
+  //     setError(error.toString());
+  //   }
+  // };
 
   return (
     <div>
