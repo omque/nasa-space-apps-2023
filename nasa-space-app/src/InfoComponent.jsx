@@ -15,7 +15,7 @@ const InfoComponent = () => {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                     >
-                        Collapsible Group Item #1
+                        Vegetation’s Role in Wildfire
                     </button>
                 </h2>
                 <div
@@ -25,7 +25,11 @@ const InfoComponent = () => {
                     data-bs-parent="#accordionExample"
                 >
                     <div className="accordion-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        <ul>
+                            <li class="list-group-item"><strong>Fuel for Fires:</strong> Dry, dense, or dead vegetation can easily ignite and provide fuel for wildfires.</li>
+                            <li class="list-group-item"><strong>Spread of Fires:</strong> Vegetation can facilitate the spread of wildfires, enabling them to reach buildings and other structures.</li>
+                            <li class="list-group-item"><strong>Intensity of Fires:</strong> Thick vegetation can intensify fires, making them harder to control and extinguish.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -39,7 +43,7 @@ const InfoComponent = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                     >
-                        Collapsible Group Item #2
+                        Preventative Measures
                     </button>
                 </h2>
                 <div
@@ -49,7 +53,12 @@ const InfoComponent = () => {
                     data-bs-parent="#accordionExample"
                 >
                     <div className="accordion-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        <ul>
+                <li><strong>Defensible Space:</strong> Create and maintain a defensible space around your home by clearing dead plants, grass, and weeds.</li>
+                            <li><strong>Tree Management:</strong> Regularly prune trees and keep branches at least 10 feet away from other trees and structures.</li>
+                            <li><strong>Landscape Smartly:</strong> Opt for fire-resistant plants and use mulches that are less likely to ignite.</li>
+                            <li><strong>Lawn Maintenance:</strong> Regularly mow your lawn and water plants, trees, and mulch to keep them from becoming fire fuel.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -63,7 +72,7 @@ const InfoComponent = () => {
                         aria-expanded="false"
                         aria-controls="collapseThree"
                     >
-                        Collapsible Group Item #3
+                        Steps During Wildfire Season
                     </button>
                 </h2>
                 <div
@@ -73,7 +82,12 @@ const InfoComponent = () => {
                     data-bs-parent="#accordionExample"
                 >
                     <div className="accordion-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        <ul>
+                            <li><strong>Emergency Kit:</strong> Prepare an emergency kit with essentials like food, water, and important documents.</li>
+                            <li><strong>Evacuation Plan:</strong> Create and practice an evacuation plan with all household members.</li>
+                            <li><strong>Stay Informed:</strong> Keep an eye on local news and weather forecasts for any wildfire alerts.</li>
+                            <li><strong>Emergency Contacts:</strong> Have a list of all essential emergency contacts and meeting points.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -87,7 +101,7 @@ const InfoComponent = () => {
                         aria-expanded="false"
                         aria-controls="collapseFour"
                     >
-                        Collapsible Group Item #4
+                        Post-Wildfire Safety
                     </button>
                 </h2>
                 <div
@@ -97,7 +111,13 @@ const InfoComponent = () => {
                     data-bs-parent="#accordionExample"
                 >
                     <div className="accordion-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        <ul>
+                            <li><strong>Wait for Clearance:</strong> Do not return to the area until local authorities have declared it safe.</li>
+                            <li><strong>Inspect Surroundings:</strong> Assess your property for hazards like hot spots, damaged structures, and loose soil.</li>
+                            <li><strong>Document Damage:</strong> Photograph damage for insurance purposes and begin the claim process promptly.</li>
+                            <li><strong>Seek Support:</strong> Connect with local communities and organizations for support and resources during recovery.</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

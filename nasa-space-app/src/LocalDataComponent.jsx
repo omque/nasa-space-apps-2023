@@ -4,7 +4,7 @@ const LocalDataComponent = () => {
   // Dummy Data
   const [localData, setLocalData] = useState({
     vegetationType: "Dense Forest",
-    fireRisk: "High",
+    fireRisk: "Medium",
   });
 
   // Actionable steps based on fire risk
