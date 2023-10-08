@@ -36,9 +36,9 @@ const HeroComponent = () => {
                 />
                 {locationData && (
                 <div>
-                    <h2>Location Data</h2>
+                    {/* <h2>Location Data</h2>
                     <p>Latitude: {locationData.lat}</p>
-                    <p>Longitude: {locationData.lon}</p>
+                    <p>Longitude: {locationData.lon}</p> */}
                     <LocalDataComponent averageData={averageData}s/>
                 </div>
             )}
