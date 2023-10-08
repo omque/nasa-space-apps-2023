@@ -9,3 +9,7 @@
     flex-direction: column;
     
   }
+
+  .hero-data-main{
+    max-height: fit-content;
+  }
