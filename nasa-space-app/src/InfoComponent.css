@@ -1,0 +1,16 @@
+.info-title {
+    padding: 3%;
+    font-weight: bolder;
+    font-size: larger;
+    border-bottom: solid;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+
+
+.accordion-body{
+text-align: left;
+}
+

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: rgb(254, 207, 205);
+  /* background-color: rgb(254, 207, 205); */
+  font-family: Helvetica, sans-serif;
 }
 
 
@@ -18,8 +19,8 @@
 .jumbotron {
   color: black;
   text-shadow: #282c34;
+  border-bottom: solid;
   height: 100vh;
-  border: solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

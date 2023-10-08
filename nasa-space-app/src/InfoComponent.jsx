@@ -1,9 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './InfoComponent.css'
 
 const InfoComponent = () => {
     return (
+        <>
+        <div className='info-title'>
+            <h2>General Wildfire Safety</h2>
+        </div>
         <div className="accordion" id="accordionExample">
             <div className="accordion-item">
                 <h2 className="accordion-header" id="headingOne">
@@ -122,6 +127,7 @@ const InfoComponent = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

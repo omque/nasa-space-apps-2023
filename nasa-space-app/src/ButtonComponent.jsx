@@ -40,7 +40,7 @@ const ButtonComponent = () => {
         <div>
             {showButton ? (
                 <button className="btn btn-primary" onClick={fetchData}>
-                    Get Location
+                    Check My Location
                 </button>
             ) : (
                 <button className="btn btn-secondary" onClick={resetStates}>
