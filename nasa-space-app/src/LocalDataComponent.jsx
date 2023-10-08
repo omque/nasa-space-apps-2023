@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import './InfoComponent.css'
 
 const LocalDataComponent = () => {
   // Dummy Data
   const [localData, setLocalData] = useState({
-    vegetationType: "Dense Forest",
     fireRisk: 0.38,
   });
 
@@ -11,8 +11,8 @@ const LocalDataComponent = () => {
   const getActionableSteps = (riskLevel) => {
     if (riskLevel < 0) {
       return (
-        <ul>
-          <li>An NDVI score between -1 and 0 suggests that the area being 
+        <ul className="action-list">
+          <li >An NDVI score between -1 and 0 suggests that the area being 
             assessed has little to no healthy or dense vegetation.</li>
           <li> In some cases, areas with 
             negative NDVI values may indicate land that could benefit from reforestation, 
@@ -67,7 +67,7 @@ const LocalDataComponent = () => {
     <div className="hero-background">
       <h1>Local Wildfire Safety Guide</h1>
       {/* <p>Your local vegetation type: <strong>{localData.vegetationType}</strong></p> */}
-      <p>Current fire risk level: <strong>{localData.fireRisk}</strong></p>
+      <p>Current NDVI fire risk level: <strong>{localData.fireRisk}</strong></p>
 
       <h2>Actionable Steps for You</h2>
       {getActionableSteps(localData.fireRisk)}

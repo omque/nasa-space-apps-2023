@@ -51,8 +51,7 @@ const ButtonComponent = () => {
             {averageData !== null && (
                 <div>
                     <LocalDataComponent averageData={averageData} />
-                    <h2>NDVI Value</h2>
-                    <p>Average: {averageData}</p>
+
                 </div>
             )}
             {showButton ? (
@@ -64,13 +63,7 @@ const ButtonComponent = () => {
                     Reset
                 </button>
             )}
-            {locationData && (
-                <div>
-                    <h2>Location Data</h2>
-                    <p>Latitude: {locationData.lat}</p>
-                    <p>Longitude: {locationData.lon}</p>
-                </div>
-            )}
+
             {error && (
                 <div>
                     <h2>Error</h2>
