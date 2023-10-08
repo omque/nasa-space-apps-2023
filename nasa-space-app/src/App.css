@@ -12,11 +12,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .jumbotron {
-  color: white;
+  color: black;
   text-shadow: #282c34;
   height: 100vh;
   border: solid;
@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: space-between;
   justify-content: center;
-  background-image: url('./DryForestPhoto.jpg');
+  background-image: url('./cartoonForest.png');
   background-size: cover;
   background-position: center;
 }

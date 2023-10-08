@@ -1,0 +1,11 @@
+.hero-background {
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    color: #fff; /* White text color for better contrast */
+    padding: 15px; /* Add some padding so text isn't on edge of box */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    
+  }

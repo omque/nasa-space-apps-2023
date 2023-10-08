@@ -75,7 +75,7 @@ const LocalDataComponent = () => {
   // };
 
   return (
-    <div>
+    <div className="hero-background">
       <h1>Local Wildfire Safety Guide</h1>
       <p>Your local vegetation type: <strong>{localData.vegetationType}</strong></p>
       <p>Current fire risk level: <strong>{localData.fireRisk}</strong></p>
@@ -85,5 +85,12 @@ const LocalDataComponent = () => {
     </div>
   );
 };
+
+
+
+
+
+
+
 
 export default LocalDataComponent;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './HeroComponent.css'
 import LocalDataComponent from './LocalDataComponent';
 import ButtonComponent from './ButtonComponent';
 
@@ -31,7 +32,7 @@ const HeroComponent = () => {
                 </div>
             )}
 
-            <div className='background box'>
+            <div className="hero-background">
                 <p>Using open science information from satellites, we can 
                     see what kind of vegitation is near you and what risks come
                     with it.
