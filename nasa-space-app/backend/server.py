@@ -2,8 +2,10 @@ from crypt import methods
 import datetime
 from numpy import average
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS  # Import Flask-CORS
+import pandas as pd
+import matplotlib.pyplot as plt
 
 #In order to run Backend:
 # pip install Flask
@@ -49,13 +51,14 @@ def date_data(latitude, longitude):
     the_product = '250m_16_days_NDVI'
     response = requests.get(base_url, params=PARAMS)
     data = (response.json())
-
+    plt.hist(data["subset"],bins=5,edgecolor='k')
+    plt.show()
     for i in range(0, len(data["subset"])):
         if data['subset'][i]['band'] == the_product:
             the_modis_data = (data['subset'][i]['data'])
             for u in range(0, len(the_modis_data)):
                 sum += the_modis_data[u]
-            the_average = (sum/(len(the_modis_data)))/10000
+            the_average = round(((sum/(len(the_modis_data)))*0.0001),2)
             break
 
 
@@ -77,7 +80,9 @@ def date_data(latitude, longitude):
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
 
-
+@app.route("/")
+def home_page():
+    return render_template('home.html')
 @app.route("/api/<longitude>/<latitude>", methods=['GET', 'POST'])
 def get_average_data(longitude, latitude):
     x = float(longitude)

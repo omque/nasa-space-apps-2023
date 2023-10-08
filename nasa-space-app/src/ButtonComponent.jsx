@@ -56,7 +56,7 @@ const ButtonComponent = () => {
             )}
             {averageData !== null && (
                 <div>
-                    <h2>Average Data</h2>
+                    <h2>NDVI Value</h2>
                     <p>Average: {averageData}</p>
                 </div>
             )}
