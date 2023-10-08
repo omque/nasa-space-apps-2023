@@ -1,29 +1,36 @@
 import React, { useState } from 'react';
-import './App.css';
-import LocalDataComponent from './LocalDataComponent';
+import axios from 'axios';
 
 const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
     const [error, setError] = useState(null);
     const [showButton, setShowButton] = useState(true);
-    const [fireRisk, setFireRisk] = useState(null);  // Note: 'fireRisk' state is not used in the provided code
+    const [averageData, setAverageData] = useState(null);
 
     const resetStates = () => {
         setLocationData(null);
         setError(null);
         setShowButton(true);
-        setFireRisk(null);  // Resetting the 'fireRisk' state, though it's not used in the provided code
+        setAverageData(null);
     };
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://ip-api.com/json/');
-            if (!response.ok) {
-                throw new Error('Network response was not ok' + response.statusText);
+            const ipApiResponse = await axios.get('http://ip-api.com/json/');
+            if (ipApiResponse.status !== 200) {
+                throw new Error('Network response was not ok');
             }
-            const data = await response.json();
+            const data = ipApiResponse.data;
             setLocationData(data);
             setShowButton(false);
+
+            // Make a request to your Flask API to get the average data
+            const flaskApiResponse = await axios.get(`http://127.0.0.1:5000/api/${data.lon}/${data.lat}`);
+            if (flaskApiResponse.status !== 200) {
+                throw new Error('Flask server response was not ok');
+            }
+            const flaskData = flaskApiResponse.data;
+            setAverageData(flaskData.average);
         } catch (error) {
             setError(error.toString());
         }
@@ -45,7 +52,12 @@ const ButtonComponent = () => {
                     <h2>Location Data</h2>
                     <p>Latitude: {locationData.lat}</p>
                     <p>Longitude: {locationData.lon}</p>
-                    <LocalDataComponent />
+                </div>
+            )}
+            {averageData !== null && (
+                <div>
+                    <h2>Average Data</h2>
+                    <p>Average: {averageData}</p>
                 </div>
             )}
             {error && (
