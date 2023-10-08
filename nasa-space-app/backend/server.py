@@ -51,8 +51,6 @@ def date_data(latitude, longitude):
     the_product = '250m_16_days_NDVI'
     response = requests.get(base_url, params=PARAMS)
     data = (response.json())
-    plt.hist(data["subset"],bins=5,edgecolor='k')
-    plt.show()
     for i in range(0, len(data["subset"])):
         if data['subset'][i]['band'] == the_product:
             the_modis_data = (data['subset'][i]['data'])

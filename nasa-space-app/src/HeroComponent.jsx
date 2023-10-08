@@ -34,7 +34,7 @@ const HeroComponent = () => {
 
             <div className="hero-background">
                 <p>Using open science information from satellites, we can 
-                    see what kind of vegitation is near you and what risks come
+                    see what kind of vegetation is near you and what risks come
                     with it.
                 </p>
                 <ButtonComponent
