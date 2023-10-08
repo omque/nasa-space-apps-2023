@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const LocalDataComponent = () => {
+const LocalDataComponent = ({averageData}) => {
   // Dummy Data
   const [localData, setLocalData] = useState({
-    vegetationType: "Dense Forest",
-    fireRisk: 0.38,
+    fireRisk: {averageData}
   });
 
   // Actionable steps based on fire risk
@@ -12,49 +11,33 @@ const LocalDataComponent = () => {
     if (riskLevel < 0) {
       return (
         <ul>
-          <li>An NDVI score between -1 and 0 suggests that the area being 
-            assessed has little to no healthy or dense vegetation.</li>
-          <li> In some cases, areas with 
-            negative NDVI values may indicate land that could benefit from reforestation, 
-            soil conservation, or other environmental restoration efforts.</li>
-          <li>Negative NDVI values can change seasonally, 
-            such as when vegetation goes dormant during winter or when there's temporary flooding. 
-            Tracking these changes can provide insights into ecosystem dynamics.</li>
+          <li>Evacuate the area as soon as possible.</li>
+          <li>Ensure your emergency kit is packed and ready.</li>
+          <li>Use N95 masks to protect against inhaling smoke.</li>
         </ul>
       );
     } else if (riskLevel >= 0 && riskLevel <= 0.34) { // Inclusive boundaries
       return (
         <ul>
-          <li>An NDVI score between 0 and 0.33 suggests that the area 
-            being assessed has sparse or low-density vegetation.</li>
-          <li>While there is some vegetation present, 
-            it may not be very healthy or dense.</li>
-          <li>Consider examining other data sources or ground 
-            observations to understand the factors affecting vegetation health, 
-            such as water availability, soil quality, or potential stressors.</li>
-            <li> Areas with low NDVI scores may benefit from environmental restoration efforts, 
-              such as reforestation, afforestation, or the introduction of native vegetation. </li>
+          <li>Stay alert for potential evacuation notices.</li>
+          <li>Keep emergency supplies prepared.</li>
+          <li>Limit outdoor activities to prevent smoke inhalation.</li>
         </ul>
       );
     } else if (riskLevel > 0.34 && riskLevel <= 0.66) { // Adjusted boundary
       return (
         <ul>
-          <li>An NDVI score between 0.33 and 0.66 suggests moderate to healthy vegetation cover</li>
-          <li>May benefit from reforestation or afforestation</li>
-          <li>Introduce more native vegetation</li>
-          <li>Erosion-prone area: 
-            Implement soil conservation practices in these areas to prevent further degradation 
-          </li>
+          <li>Stay informed with the latest local news.</li>
+          <li>Ensure you have an emergency plan in place.</li>
+          <li>Continue regular property and vegetation maintenance.</li>
         </ul>
       );
     } else if (riskLevel > 0.66) {
       return (
         <ul>
-          <li>Areas with NDVI values in this range often represent healthy ecosystems. </li>
-          <li>Investigate areas with high NDVI values as potential biodiversity hotspots.</li>
-          <li> These areas are crucial for stabilizing banks, preventing erosion, and maintaining water quality.</li>
-             <li> Monitor areas with high NDVI values for signs of drought resilience, 
-              and understanding these areas can improve current data on water resource management.</li> 
+          <li>Stay informed with the latest local news.</li>
+          <li>Ensure you have an emergency plan in place.</li>
+          <li>Continue regular property and vegetation maintenance.</li>
         </ul>
       );
     } else {
@@ -63,41 +46,16 @@ const LocalDataComponent = () => {
   };
   
 
-  //Function for getting fire risk data
 
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch("YOUR_API_ENDPOINT");
-      
-  //     if (!response.ok) {
-  //       throw new Error("Server responded with a non-ok status");
-  //     }
-      
-  //     const data = await response.json();
   
-  //     // Ensure fireRisk is between -1 and 1
-  //     if (
-  //       typeof data.fireRisk !== 'number' ||
-  //       data.fireRisk < -1 ||
-  //       data.fireRisk > 1
-  //     ) {
-  //       throw new Error("Invalid fireRisk value received");
-  //     }
-      
-  //     setLocalData(data);
-  //   } catch (error) {
-  //     setError(error.toString());
-  //   }
-  // };
 
   return (
     <div className="hero-background">
       <h1>Local Wildfire Safety Guide</h1>
-      {/* <p>Your local vegetation type: <strong>{localData.vegetationType}</strong></p> */}
-      <p>Current fire risk level: <strong>{localData.fireRisk}</strong></p>
+      <p>Current fire risk level: <strong>{averageData}</strong></p>
 
       <h2>Actionable Steps for You</h2>
-      {getActionableSteps(localData.fireRisk)}
+      {getActionableSteps(averageData)}
     </div>
   );
 };

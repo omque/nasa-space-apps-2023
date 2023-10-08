@@ -1,11 +1,8 @@
-from crypt import methods
 import datetime
 from numpy import average
 import requests
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS  # Import Flask-CORS
-import pandas as pd
-import matplotlib.pyplot as plt
 
 #In order to run Backend:
 # pip install Flask

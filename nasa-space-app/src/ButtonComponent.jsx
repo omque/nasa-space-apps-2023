@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import LocalDataComponent from './LocalDataComponent';
 
 const ButtonComponent = () => {
     const [locationData, setLocationData] = useState(null);
@@ -12,6 +13,10 @@ const ButtonComponent = () => {
         setError(null);
         setShowButton(true);
         setAverageData(null);
+    };
+
+    const onAverageDataChange = (newAverageData) => {
+        setAverageData(newAverageData);
     };
 
     const fetchData = async () => {
@@ -31,6 +36,11 @@ const ButtonComponent = () => {
             }
             const flaskData = flaskApiResponse.data;
             setAverageData(flaskData.average);
+
+            //inform parent component about new average
+            if(typeof onAverageDataChange === 'function') {
+                onAverageDataChange(flaskData.average)
+            }
         } catch (error) {
             setError(error.toString());
         }
@@ -38,9 +48,16 @@ const ButtonComponent = () => {
 
     return (
         <div>
+            {averageData !== null && (
+                <div>
+                    <LocalDataComponent averageData={averageData} />
+                    <h2>NDVI Value</h2>
+                    <p>Average: {averageData}</p>
+                </div>
+            )}
             {showButton ? (
                 <button className="btn btn-primary" onClick={fetchData}>
-                    Check My Location
+                    Get Location
                 </button>
             ) : (
                 <button className="btn btn-secondary" onClick={resetStates}>
@@ -52,12 +69,6 @@ const ButtonComponent = () => {
                     <h2>Location Data</h2>
                     <p>Latitude: {locationData.lat}</p>
                     <p>Longitude: {locationData.lon}</p>
-                </div>
-            )}
-            {averageData !== null && (
-                <div>
-                    <h2>NDVI Value</h2>
-                    <p>Average: {averageData}</p>
                 </div>
             )}
             {error && (
