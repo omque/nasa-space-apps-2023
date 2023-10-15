@@ -29,6 +29,8 @@ def date_data(latitude, longitude):
     dates = (data['dates'][len(data['dates'])-1])
     modis_date = (dates['modis_date'])
     calendar_date = (dates['calendar_date'])
+
+    
     #---------------------------------------
 
     #Calling Request Function Again in order to get Average of modis
