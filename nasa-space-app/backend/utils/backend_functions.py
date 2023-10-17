@@ -4,6 +4,7 @@
 latitude = 39.174272
 longitude = -116.937615
 product = "MOD13Q1"
+band = "250m_16_days_NDVI"
 
 #Request most recent available calendar and NDVI data from MODIS API
 def fetch_most_recent_data(latitude, longitude, product):
@@ -29,11 +30,12 @@ def format_MODIS_data(recent_data):
     return modis_date, calendar_date
 
 #Request NDVI Data from MODIS API
-def fetch_ndvi_data(latitude, longitude, product, modis_date):
+def fetch_ndvi_data(latitude, longitude, band, product, modis_date):
     base_url = "https://modis.ornl.gov/rst/api/v1/MOD13Q1/subset?"
     PARAMS={
         "longitude" : longitude,
         "latitude" : latitude,
+        "band": band,
         "kmAboveBelow" : 1,
         "kmLeftRight" : 1,
         "product" : product,
@@ -49,8 +51,7 @@ def fetch_ndvi_data(latitude, longitude, product, modis_date):
 def format_NDVI_data(ndvi_data):
 
     sum = 0
-    the_average = 0
-    the_product = '250m_16_days_NDVI'
+    average_ndvi = 0
     
     
     for i in range(0, len(data["subset"])):
