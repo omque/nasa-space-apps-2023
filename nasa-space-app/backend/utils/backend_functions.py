@@ -52,9 +52,12 @@ def format_NDVI_data(ndvi_data):
 
     sum = 0
     average_ndvi = 0
-    
-    
-    for i in range(0, len(data["subset"])):
+        
+    for i in range(0, len(ndvi_data["subset"])):
+        
+        
+        if ndvi_data["subset"][i] == 
+
         if data['subset'][i]['band'] == the_product:
             the_modis_data = (data['subset'][i]['data'])
             for u in range(0, len(the_modis_data)):
