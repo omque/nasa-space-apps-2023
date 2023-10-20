@@ -52,15 +52,11 @@ def format_NDVI_data(ndvi_data):
 
     sum = 0
     average_ndvi = 0
-        
-    for i in range(0, len(ndvi_data["subset"])):
-        
-        
-        if ndvi_data["subset"][i] == 
+    
+    for value in ndvi_data["subset"][0]["data"]:
+        sum += value
 
-        if data['subset'][i]['band'] == the_product:
-            the_modis_data = (data['subset'][i]['data'])
-            for u in range(0, len(the_modis_data)):
-                sum += the_modis_data[u]
-            the_average = round(((sum/(len(the_modis_data)))*0.0001),2)
-            break
+    average_ndvi = ((sum)/(len(ndvi_data["subset"][0]["data"]))*0.0001)
+    scaled_ndvi = round(average_ndvi,2)
+
+    return scaled_ndvi
